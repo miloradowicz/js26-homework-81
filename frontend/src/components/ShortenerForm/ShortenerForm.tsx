@@ -15,8 +15,10 @@ interface DataError {
   originalUrl?: string;
 }
 
+const initialData: Data = { originalUrl: '' };
+
 const ShortenerForm: FC<Props> = ({ onSubmit }) => {
-  const [data, setData] = useState<Data>({ originalUrl: '' });
+  const [data, setData] = useState<Data>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<DataError>({});
 
@@ -33,6 +35,8 @@ const ShortenerForm: FC<Props> = ({ onSubmit }) => {
       }
 
       void (await onSubmit(data));
+
+      setData(initialData);
     } finally {
       setLoading(false);
     }
