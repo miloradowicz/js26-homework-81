@@ -1,4 +1,4 @@
-const chars = 'AB'; // 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
 export const getRandomString = (length: number) => {
   if (Number.isNaN(length) || length < 1) {

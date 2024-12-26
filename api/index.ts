@@ -62,7 +62,7 @@ app.post('/links', async (req, res, next) => {
 });
 
 (async () => {
-  await mongoose.connect('mongodb://localhost/miloradowicz-hw81');
+  await mongoose.connect(config.mongoose.db);
 
   await Link.init();
 
